@@ -1,0 +1,52 @@
+{//2/13/23
+  "name": "The Staywell",
+  "short_name": "Staywell",
+  "description":"Inexpensive Airbnb with Common-Sense Amenities near The Ark Encounter."
+  "start_url": "/site.webmanifest",
+  "display": "standalone",
+  "background_color": "",
+  "theme_color": "",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/assets/icons/icon-57x57.png",
+      "type": "image/png",
+      "sizes": "57x57"
+    },
+    {
+      "src": "/assets/icons/icon-60x60.png",
+      "type": "image/png",
+      "sizes": "60x60"
+    },
+    {
+      "src": "/assets/icons/icon-72x72.png",
+      "type": "image/png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "/assets/icons/icon-114x114.png",
+      "type": "image/png",
+      "sizes": "114x114"
+    },
+    {
+      "src": "/assets/icons/icon-120x120.png",
+      "type": "image/png",
+      "sizes": "120x120"
+    },
+    {
+      "src": "/assets/icons/icon-144x144.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "/assets/icons/icon-72x72.png",
+      "type": "image/png",
+      "sizes": "152x152"
+    },
+    {
+      "src": "/assets/icons/icon-72x72.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    }
+  ]
+}
