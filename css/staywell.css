@@ -574,9 +574,7 @@ ul.Social-links li a:hover {
   text-transform: uppercase;
   display: inline-block;
 }
-#map {
-  height: 400px;
-}
+
 .footer-container {
   background: #000000;
   display: flex;
@@ -728,3 +726,10 @@ ul.Social-links li a:hover {
     font-size: 30px;
   }
 }
+/* Google Maps API Begin */
+
+  #map {
+    height: 400px;
+  }
+  
+/* Google Maps API End /*
