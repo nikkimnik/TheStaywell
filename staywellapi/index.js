@@ -1,16 +1,16 @@
 let express = require('express');
 let app = express();
-let bookedDatesRepo = require('./repos/bookedDatesRepo');
+let localAttractionsRepo = require('./repos/localAttractionsRepo');
 
 let router = express.Router();
 
 router.get('/:date', function (req, res, next) {
-    bookedDatesRepo.getById(req.params.id, function (data) {
+    localAttractionsRepo.getById(req.params.id, function (data) {
         if (data) {
             res.status(200).json({
                 "status": 200,
                 "statusText": "OK",
-                "message": "Booked date retrieved.",
+                "message": "Local Attraction retrieved.",
                 "data": data
             });
         }
