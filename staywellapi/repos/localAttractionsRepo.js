@@ -1,8 +1,8 @@
 let fs = require ('fs');
 
-const FILE_NAME = "./assets/bookedDates.json";
+const FILE_NAME = "./assets/localattractions.json";
 
-let bookedDatesRepo = {
+let localAttractionsRepo = {
     get: function (resolve, reject) {
         fs.readFile(FILE_NAME, function (err, data) {
             if (err) {
@@ -19,11 +19,11 @@ let bookedDatesRepo = {
                 reject(err);
             }
             else {
-                let bookedDates = JSON.parse(data).find(b => b.date == date);
-                resolve(bookedDates);
+                let localattractions = JSON.parse(data).find(b => b.date == date);
+                resolve(localAttractions);
             }
         }
     }
 };
 
-module.exports = bookedDatesRepo;
+module.exports = localAttractionsRepo;
