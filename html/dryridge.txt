@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 12 Broadway, Street, Dry Ridge, KY  41035 US
 { lat: 38.682370, lng: -84.590510 }
 
@@ -6,3 +7,10 @@ Ark Encounter
 
 Tractor Supply
 { lat: 38.662682, lng: -84.575203 }
+=======
+12 Broadway, Street, Dry Ridge, KY  41035 US
+{ lat: 38.682370, lng: -84.590510 }
+
+Ark Encounter
+{ lat: 38.622730, lng: -84.584460 }
+>>>>>>> 530fdbe798924bc35ae27f2901bdb86f3c5d0465
