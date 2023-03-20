@@ -1,23 +1,3 @@
-<<<<<<< HEAD
-import express from 'express
-import cors from 'cors'
-
-const app = express();
-app.use(cors())
-const port = 3000;
-
-app.get('/', (req, res) => {
-  return res.json("Home")
-})
-
-app.get('/contactus', (req, res) => {
-  return res.json(data)
-})
-
-app.listen(port, () => {
-  console.log(`App is live at http://localhost:${port}`);
-});
-=======
 let express = require('express');
 let app = express();
 let bookedDatesRepo = require('./repos/bookedDatesRepo');
@@ -43,12 +23,11 @@ router.get('/:date', function (req, res, next) {
                     "code": "NOT_FOUND",
                     "message": "The date '" + req.params.date + "' could not be found.",
                 }
-            }),       
-        }
-    }, function(err) {
+            }),
+            function(err) {
         next(err);
-    });
-});
+    };
+};
 
 app.use('/api/', router);
 
@@ -56,4 +35,3 @@ app.use('/api/', router);
 var server = app.listen(5000, function () {
     console.log('Node server is running on http://localhost:5000..');
 });
->>>>>>> 530fdbe798924bc35ae27f2901bdb86f3c5d0465

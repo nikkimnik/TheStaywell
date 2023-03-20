@@ -1,68 +1,29 @@
-<<<<<<< HEAD
-<script>
-//Current Date
-let today = new Date();
+//Set the date we're counting down to
+let countDownDate = new Date("Sep 02, 2023 15:00:00").getTime();
 
-//Year of Current Date
-let july4Year = today.getFullYear();
+//Update seconds
+let x = setInterval(function () {
+  //Today's date and time
+  let now = new Date().getTime();
 
-//Check that current date isn't later than July4
-if (today.getMonth()) == 6 &&
-    today.getDate() > 4) {
+  //Time between now and the countdown date
+  let distance = countDownDate - now;
 
-//Add a year so that the next Christmas date could be used
-july4Year = christmasYear + 1;
-}
+  //Time calculations
+  let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-//Get the date of the next July4
-let july4Date = 
-    new Date (july4Year, 6, 4);
+  //Results display in element id="demo"
+  document.getElementById("remaining_days").innterHTML = days;
+  document.getElementById("remaining_hours").innterHTML = hours;
+  document.getElementById("remaining_minutes").innterHTML = minutes;
+  document.getElementById("remaining_seconds").innterHTML = seconds;
 
-//Get the number of milliseconds in 1 day
-let dayMilliseconds =
-    1000 * 60 * 60 * 24;
-
-//Get the remaining amount of days
-let remainingDays = Math.ceil(
-    (july4Date.getTime() - today.getTime()) /
-    (dayMilliseconds)
-);
-
-//Write it to the page
-document.write("Book now to reserve your sweet spot for watching the City of Dry Ridge's Party in the Park fireworks!  There are only " + remainingDays + " until July 4th!");
-
-=======
-<script>
-//Current Date
-let today = new Date();
-
-//Year of Current Date
-let july4Year = today.getFullYear();
-
-//Check that current date isn't later than July4
-if (today.getMonth()) == 6 &&
-    today.getDate() > 4) {
-
-//Add a year so that the next Christmas date could be used
-july4Year = christmasYear + 1;
-}
-
-//Get the date of the next July4
-let july4Date = 
-    new Date (july4Year, 6, 4);
-
-//Get the number of milliseconds in 1 day
-let dayMilliseconds =
-    1000 * 60 * 60 * 24;
-
-//Get the remaining amount of days
-let remainingDays = Math.ceil(
-    (july4Date.getTime() - today.getTime()) /
-    (dayMilliseconds)
-);
-
-//Write it to the page
-document.write("Book now to reserve your sweet spot for watching the City of Dry Ridge's Party in the Park fireworks!  There are only " + remainingDays + " until July 4th!");
-
->>>>>>> 530fdbe798924bc35ae27f2901bdb86f3c5d0465
-</script>
+  //If the countdown is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
