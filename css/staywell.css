@@ -561,13 +561,6 @@ p.book-link-text {
     padding-right: 0;
   }
 }
-/* 
-.slider{
-    width: 800px;
-    height: 500px;
-    border-radius: 10px;
-    overflow: hidden;
-} */
 
 .slides {
   width: 500%;
@@ -793,7 +786,7 @@ section.contact-content-section {
 }
 .contact-right h2 {
   font-size: 24px;
-  color #fff;
+  color #fff !important;
   font-weight: 700;
   margin-bottom: 20px;
   letter-spacing: 0;
