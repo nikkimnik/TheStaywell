@@ -104,6 +104,49 @@ form.addEventListener("submit", function (event) {
   console.log("Form submitted successfully ${name}! Your message has been received.`
   );
 });
+//Order Confirmation # Code Begin
+
+function createConfirmationNumber(customerName, bookingNumber) {
+  // Generate a random number between 1000 and 9999
+  const randomNumber = Math.floor(Math.random() * 9000) + 1000;
+  // Combine the customer's name, booking number, and random number to create the confirmation number
+  const confirmationNumber = `${customerName.slice(0, 3)}-${bookingNumber.slice(0, 3)}-${randomNumber}`;
+  return confirmationNumber;
+}
+
+const customerName = "John Doe";
+const bookingNumber = "ABC123";
+const confirmationNumber = createConfirmationNumber(customerName, bookingNumber);
+
+//Order Confirmation # Code End
+
+//Alt Order Confirmation # Code Start
+
+function createConfirmationNumber() {
+  // Generate a random number between 1000 and 9999
+  const randomNumber = Math.floor(Math.random() * 9000) + 1000;
+  // Load the customer and booking data using the fetch API
+  Promise.all([
+    fetch('customer.json').then(response => response.json()),
+    fetch('booking.json').then(response => response.json())
+  ])
+  .then(data => {
+    const customerData = data[0];
+    const bookingData = data[1];
+    // Get the customer's name and booking number from the JSON data
+    const customerName = customerData.name;
+    const bookingNumber = bookingData.number;
+    // Combine the customer's name, booking number, and random number to create the confirmation number
+    const confirmationNumber = `${customerName.slice(0, 3)}-${bookingNumber.slice(0, 3)}-${randomNumber}`;
+    // Set the confirmation number in the HTML
+    document.getElementById("confirmation-number").innerText = confirmationNumber;
+  })
+  .catch(error => {
+    console.error(error);
+  });
+}
+
+//Alt Order Confirmation # Code End
 
 //Thermometer function JS Begin
 

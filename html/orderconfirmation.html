@@ -10,7 +10,7 @@
             several restaurants, with Piddle Park across the street. Bring your fishing gear, play some games, or just relax!"
     />
     <meta name="author" content="The Staywell" />
-    <title>About Us</title>
+    <title>Order Confirmation</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -75,22 +75,38 @@
     </header>
     <!-- Navigation ends -->
 
-    <!-- About Us Code Start -->
-    <section>
-      <h2>Our Story</h2>
-      <p>
-        Delivering for America sums it up.
-    </p>
-    </section>
-    <section>
-      <h2>Us</h2>
-      <img src="../images/us.jpg"
-      <ul>
-        <li>Justin and Nikki Baker - Owners</li>
-      </ul>
-    </section>
-
-    <!-- About Us Code End -->
+    <!-- Order Confirmation # Code Start -->
+        <script>
+          function createConfirmationNumber(customerData, bookingData) {
+            // Greates a random number between 1000 and 9999
+            const randomNumber = Math.floor(Math.random() * 9000) + 1000;
+            // Get the customer's name and booking number from the JSON data
+            const customerName = customerData.name;
+            const bookingNumber = bookingData.number;
+            // Combine the customer's name, booking number, and random number to create the confirmation number
+            const confirmationNumber = `${customerName.slice(
+              0,
+              3
+            )}-${bookingNumber.slice(0, 3)}-${randomNumber}`;
+            // Set the confirmation number in the HTML
+            document.getElementById("confirmation-number").innerText =
+              confirmationNumber;
+          }
+        </script>
+      <body>
+        <main>
+          <p>Thank you for your order!</p>
+          <p>
+            Your confirmation number is:
+            <strong id="confirmation-number"></strong>
+          </p>
+          <button
+            onclick="createConfirmationNumber({name: 'John Smith'}, {number: '123456'})"
+          >
+            Generate Confirmation Number
+          </button>
+        </main>
+    <!-- Order Confirmation Code End -->
 
     <!-- Footer section Start -->
     <footer class="footer-section bg-neutral-900 text-neutral-100">
@@ -110,7 +126,7 @@
                 <li><a href="#">Local Attractions</a></li>
                 <li><a href="#">Local Events</a></li>
                 <li><a href="#">Tips For Your Stay</a></li>
-                <li><a href="../aboutus.html">About Us</a></li>
+                <li><a href="#">Restaurants & Stores</a></li>
               </ul>
             </div>
           </div>

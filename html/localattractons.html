@@ -10,7 +10,7 @@
             several restaurants, with Piddle Park across the street. Bring your fishing gear, play some games, or just relax!"
     />
     <meta name="author" content="The Staywell" />
-    <title>About Us</title>
+    <title>Local Attractions</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -32,9 +32,11 @@
       href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css"
     />
     <link rel="stylesheet" href="../css/staywell.css" />
+    <script src="https://"
   </head>
   <body>
-    <!-- Navigation starts -->
+    <!--Navigation starts -->
+
     <header>
       <nav class="navbar sticky-top navbar-expand-lg primary-navigation">
         <a class="navbar-brand" href="../index.html"
@@ -75,22 +77,41 @@
     </header>
     <!-- Navigation ends -->
 
-    <!-- About Us Code Start -->
-    <section>
-      <h2>Our Story</h2>
-      <p>
-        Delivering for America sums it up.
-    </p>
-    </section>
-    <section>
-      <h2>Us</h2>
-      <img src="../images/us.jpg"
-      <ul>
-        <li>Justin and Nikki Baker - Owners</li>
-      </ul>
-    </section>
+    <!-- Local Attractions json file data pull start -->
 
-    <!-- About Us Code End -->
+    <h1>Local Attractions</h1>
+    <div id="attraction-list"></div>
+
+    <script>
+      // Step 1: Retrieve data from the JSON file
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          // Step 2: Parse JSON data into a JavaScript object
+          var attractions = JSON.parse(this.responseText);
+
+          // Step 3: Loop through the object and create HTML elements
+          var attractionList = document.getElementById("attraction-list");
+          for (var i = 0; i < attractions.length; i++) {
+            var attraction = attractions[i];
+            var attractionDiv = document.createElement("div");
+            attractionDiv.innerHTML = `
+              <h2>${attraction.attraction}</h2>
+              <p>${attraction.address}</p>
+              <p>${attraction.distance} miles away</p>
+              <img src="${attraction.attraction
+                .replaceAll(" ", "-")
+                .toLowerCase()}.jpg" alt="${attraction.attraction}">
+            `;
+            attractionList.appendChild(attractionDiv);
+          }
+        }
+      };
+      xhr.open("GET", "localAttractions.json", true);
+      xhr.send();
+    </script>
+
+    <!-- Local Attractions json file data pull end -->
 
     <!-- Footer section Start -->
     <footer class="footer-section bg-neutral-900 text-neutral-100">
@@ -110,7 +131,7 @@
                 <li><a href="#">Local Attractions</a></li>
                 <li><a href="#">Local Events</a></li>
                 <li><a href="#">Tips For Your Stay</a></li>
-                <li><a href="../aboutus.html">About Us</a></li>
+                <li><a href="#">Restaurants & Stores</a></li>
               </ul>
             </div>
           </div>
