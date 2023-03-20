@@ -1,3 +1,5 @@
+/* Google Maps API Code for when we utilize our API Key */
+
 const express = require("express");
 const router = express.Router();
 const fetch = require("node-fetch");
@@ -37,3 +39,5 @@ router.post("/", async (req, res) => {
 });
 
 module.exports = router;
+
+*/

@@ -41,6 +41,10 @@ function autoSlider() {
 
 setInterval(autoSlider, 3000);
 
+/* 
+
+Code for Google Maps API when we utilize our API Key
+
 let map;
 const staywellLatLong = { lat: 38.68237, lng: -84.59051 };
 const arkEncounterLatLong = { lat: 38.62273, lng: -84.58446 };
@@ -67,6 +71,8 @@ function initMap() {
     map: map,
   });
 }
+
+*/
 const form = document.getElementById("contactForm");
 form.addEventListener("submit", function (event) {
   event.preventDefault();
