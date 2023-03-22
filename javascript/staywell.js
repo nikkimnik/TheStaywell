@@ -95,13 +95,12 @@ form.addEventListener("submit", function (event) {
   }
 
   if (!name || !subject || !message || !email || !phone) {
-    alert(
-      "All fields are required./n Please fill out the form completely."
-    );
+    alert("All fields are required./n Please fill out the form completely.");
     return;
   }
 
-  console.log("Form submitted successfully ${name}! Your message has been received.`
+  console.log(
+    "Form submitted successfully ${name}! Your message has been received."
   );
 });
 //Order Confirmation # Code Begin
@@ -110,13 +109,19 @@ function createConfirmationNumber(customerName, bookingNumber) {
   // Generate a random number between 1000 and 9999
   const randomNumber = Math.floor(Math.random() * 9000) + 1000;
   // Combine the customer's name, booking number, and random number to create the confirmation number
-  const confirmationNumber = `${customerName.slice(0, 3)}-${bookingNumber.slice(0, 3)}-${randomNumber}`;
+  const confirmationNumber = `${customerName.slice(0, 3)}-${bookingNumber.slice(
+    0,
+    3
+  )}-${randomNumber}`;
   return confirmationNumber;
 }
 
 const customerName = "John Doe";
 const bookingNumber = "ABC123";
-const confirmationNumber = createConfirmationNumber(customerName, bookingNumber);
+const confirmationNumber = createConfirmationNumber(
+  customerName,
+  bookingNumber
+);
 
 //Order Confirmation # Code End
 
@@ -127,64 +132,27 @@ function createConfirmationNumber() {
   const randomNumber = Math.floor(Math.random() * 9000) + 1000;
   // Load the customer and booking data using the fetch API
   Promise.all([
-    fetch('customer.json').then(response => response.json()),
-    fetch('booking.json').then(response => response.json())
+    fetch("customer.json").then((response) => response.json()),
+    fetch("booking.json").then((response) => response.json()),
   ])
-  .then(data => {
-    const customerData = data[0];
-    const bookingData = data[1];
-    // Get the customer's name and booking number from the JSON data
-    const customerName = customerData.name;
-    const bookingNumber = bookingData.number;
-    // Combine the customer's name, booking number, and random number to create the confirmation number
-    const confirmationNumber = `${customerName.slice(0, 3)}-${bookingNumber.slice(0, 3)}-${randomNumber}`;
-    // Set the confirmation number in the HTML
-    document.getElementById("confirmation-number").innerText = confirmationNumber;
-  })
-  .catch(error => {
-    console.error(error);
-  });
+    .then((data) => {
+      const customerData = data[0];
+      const bookingData = data[1];
+      // Get the customer's name and booking number from the JSON data
+      const customerName = customerData.name;
+      const bookingNumber = bookingData.number;
+      // Combine the customer's name, booking number, and random number to create the confirmation number
+      const confirmationNumber = `${customerName.slice(
+        0,
+        3
+      )}-${bookingNumber.slice(0, 3)}-${randomNumber}`;
+      // Set the confirmation number in the HTML
+      document.getElementById("confirmation-number").innerText =
+        confirmationNumber;
+    })
+    .catch((error) => {
+      console.error(error);
+    });
 }
 
 //Alt Order Confirmation # Code End
-
-//Thermometer function JS Begin
-
-CountDownTimer('12/31/2023 10:1 AM', 'countdown');
-CountDownTimer('12/31/2023 10:1 AM', 'newcountdown');
-
-function CountDownTimer(dt, id)
-{
-    var end = new Date(dt);
-
-    var _second = 1000;
-    var _minute = _second * 60;
-    var _hour = _minute * 60;
-    var _day = _hour * 24;
-    var timer;
-
-    function showRemaining() {
-        var now = new Date();
-        var distance = end - now;
-        if (distance < 0) {
-
-            clearInterval(timer);
-            document.getElementById(id).innerHTML = '0';
-
-            return;
-        }
-        var days = Math.floor(distance / _day);
-        var hours = Math.floor((distance % _day) / _hour);
-        var minutes = Math.floor((distance % _hour) / _minute);
-        var seconds = Math.floor((distance % _minute) / _second);
-
-        document.getElementById(id).innerHTML = days /*+ ' days'*/;
-        //document.getElementById(id).innerHTML += hours + 'hrs ';
-        //document.getElementById(id).innerHTML += minutes + 'mins ';
-        //document.getElementById(id).innerHTML += seconds + 'secs';
-    }
-
-    timer = setInterval(showRemaining, 1000);
-}
-
-//Thermometer function JS End
