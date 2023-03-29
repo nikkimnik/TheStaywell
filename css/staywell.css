@@ -513,64 +513,47 @@ p.book-link-text {
   color: #380000;
 }
 
-.table {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-collapse: collapse;
-  font-family: "Quicksand", sans-serif;
-  overflow: hidden;
-  font-weight: bold;
+.attraction-list {
+  margin-top: 30px;
 }
-
-.table thead th {
-  padding: 10px 0;
-  background-color: #f4f4f4;
-  /* background-color: #fff; */
-  border: thin solid #d4d4d4;
+.attraction-item {
+  padding: 25px;
+  background: #fff;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 0 8px #777;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
 }
-
-.table td,
-.table th {
-  padding: 10px 10px;
-  border: thin solid #d4d4d4;
-  width: 18%;
-  text-align: center;
-  background-color: #fff;
+.attraction-item img.attr-img {
+  width: 190px;
+  height: auto;
 }
-
-.table tbody tr:nth-of-type(even) {
-  background: #eeeeee;
+.attraction-detail h3 {
+  margin: 5px 0 20px;
+  font-size: 24px;
+  color: #000;
+  font-weight: 600;
 }
-
-.table tbody tr:last-of-type {
-  border-bottom: 2px solid #d4d4d4;
+.att-desc i.fa {
+  font-size: 22px;
+  color: #990300;
+  font-weight: 600;
 }
-
-.table a {
-  text-decoration: none;
-  color: darkred;
-  background-color: #ffecef;
-  padding: 10px 15px;
+.att-descr {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  gap: 15px;
 }
-.table a:active {
-  background-color: #ccf4d6;
-  color: green;
+.att-desc span {
+  color: #000;
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0;
+  display: block;
 }
-
-.table select {
-  padding: 10px;
-  width: 200px;
-  font-size: 16px;
-  border: thin solid #d4d4d4;
-  background-color: transparent;
-}
-.table select:focus {
-  outline: none;
-}
-
-table img {
-  width: 60%;
-}
-
 /* new css end */
 
 @media all and (min-width: 468px) {
@@ -1254,6 +1237,22 @@ ul.ft-nav-list {
     height: 250px;
     max-width: 85%;
   }
+  .attraction-item img.attr-img {
+    margin: 0 auto;
+  }
+  .attraction-item {
+    flex-wrap: wrap;
+  }
+  .attraction-detail h3 {
+    font-size: 22px;
+  }
+  .att-descr span {
+    font-size: 14px;
+  }
+  .att-descr i.fa {
+    font-size: 20px;
+  }
+
   .slide img {
     height: 180px;
     object-fit: unset;

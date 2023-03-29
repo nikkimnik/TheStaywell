@@ -33,6 +33,7 @@
     />
     <link rel="stylesheet" href="../css/staywell.css" />
   </head>
+
   <body>
     <!--Navigation starts -->
 
@@ -75,24 +76,58 @@
       </nav>
     </header>
     <!-- Navigation ends -->
+
+    <!-- Local Attractions list begin -->
+
     <section class="contact-content-section">
       <div class="container">
         <h2 class="contact-heading">Local Attractions</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Image</th>
-              <th>Attraction</th>
-              <th>Address</th>
-              <th>Distance</th>
-            </tr>
-          </thead>
-          <tbody id="attraction-list">
-            <!-- Local Attractions Pulled from the Javascript file -->
-          </tbody>
-        </table>
+        <div class="'row">
+          <div class="col-lg-12">
+            <div class="attraction-list"></div>
+          </div>
+        </div>
       </div>
     </section>
+    <!-- Local Attractions json file data pull start -->
+
+    <script>
+      // Step 1: Retrieve data from the JSON file
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          // Step 2: Parse JSON data into a JavaScript object
+          let attractions = JSON.parse(this.responseText);
+          attractions = attractions.data;
+
+          // Step 3: Loop through the object and create HTML elements
+          var attractionList =
+            document.getElementsByClassName("attraction-list")[0];
+          for (let i = 0; i < attractions.length; i++) {
+            let attraction = attractions[i];
+            let attractionDiv = document.createElement("div");
+            attractionDiv.classList.add("attraction-item");
+            attractionDiv.innerHTML = `
+        <img src="images/fireworks.jpeg" alt="attraction-img" class="attr-img" />
+          <div class="attraction-detail">
+            <h3 class="attraction-title">${attraction.attraction}</h3>
+            <div class="att-descr">
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              <span>${attraction.address}</span>
+            </div>
+            <div class="att-descr">
+              <i class="fa fa-map-signs" aria-hidden="true"></i>
+              <span>${attraction.distance}</span>
+            </div>
+          </div>
+        `;
+            attractionList.appendChild(attractionDiv);
+          }
+        }
+      };
+      xhr.open("GET", "localAttractions.json", true);
+      xhr.send();
+    </script>
 
     <!-- Local Attractions json file data pull end -->
 
@@ -173,6 +208,6 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
-    <script src="../javascript/staywell.js"></script>
+    <!--<script src="../javascript/staywell.js"></script> -->
   </body>
 </html>
