@@ -98,7 +98,7 @@
         if (this.readyState == 4 && this.status == 200) {
           // Step 2: Parse JSON data into a JavaScript object
           let attractions = JSON.parse(this.responseText);
-          attractions = attractions.data;
+          attractions = attractions.attractions;
 
           // Step 3: Loop through the object and create HTML elements
           var attractionList =
@@ -108,7 +108,7 @@
             let attractionDiv = document.createElement("div");
             attractionDiv.classList.add("attraction-item");
             attractionDiv.innerHTML = `
-        <img src="images/fireworks.jpeg" alt="attraction-img" class="attr-img" />
+
           <div class="attraction-detail">
             <h3 class="attraction-title">${attraction.attraction}</h3>
             <div class="att-descr">
@@ -125,7 +125,7 @@
           }
         }
       };
-      xhr.open("GET", "localAttractions.json", true);
+      xhr.open("GET", "../../localAttractions.json", true);
       xhr.send();
     </script>
 

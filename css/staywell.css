@@ -516,6 +516,10 @@ p.book-link-text {
 .attraction-list {
   margin-top: 30px;
 }
+.attraction-list span {
+  color: black;
+}
+
 .attraction-item {
   padding: 25px;
   background: #fff;
