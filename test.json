@@ -1,0 +1,15 @@
+{
+  "headers": ["Attraction", "Address", "Distance"],
+  "rows": [
+    [
+      "The Ark Encounter",
+      "1 Ark Encounter Drive, Williamstown, KY  41097",
+      "50 miles"
+    ],
+    [
+      "Mammouth Cave National Park",
+      "1 Mammoth Cave Parkway, Mammoth Cave, KY  42259",
+      "60 miles"
+    ]
+  ]
+}

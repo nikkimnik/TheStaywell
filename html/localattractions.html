@@ -32,7 +32,6 @@
       href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css"
     />
     <link rel="stylesheet" href="../css/staywell.css" />
-    <script src="https://"
   </head>
   <body>
     <!--Navigation starts -->
@@ -76,40 +75,24 @@
       </nav>
     </header>
     <!-- Navigation ends -->
-
-    <!-- Local Attractions json file data pull start -->
-
-    <h1>Local Attractions</h1>
-    <div id="attraction-list"></div>
-
-    <script>
-      // Step 1: Retrieve data from the JSON file
-      var xhr = new XMLHttpRequest();
-      xhr.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-          // Step 2: Parse JSON data into a JavaScript object
-          var attractions = JSON.parse(this.responseText);
-
-          // Step 3: Loop through the object and create HTML elements
-          var attractionList = document.getElementById("attraction-list");
-          for (var i = 0; i < attractions.length; i++) {
-            var attraction = attractions[i];
-            var attractionDiv = document.createElement("div");
-            attractionDiv.innerHTML = `
-              <h2>${attraction.attraction}</h2>
-              <p>${attraction.address}</p>
-              <p>${attraction.distance} miles away</p>
-              <img src="${attraction.attraction
-                .replaceAll(" ", "-")
-                .toLowerCase()}.jpg" alt="${attraction.attraction}">
-            `;
-            attractionList.appendChild(attractionDiv);
-          }
-        }
-      };
-      xhr.open("GET", "localAttractions.json", true);
-      xhr.send();
-    </script>
+    <section class="contact-content-section">
+      <div class="container">
+        <h2 class="contact-heading">Local Attractions</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Attraction</th>
+              <th>Address</th>
+              <th>Distance</th>
+            </tr>
+          </thead>
+          <tbody id="attraction-list">
+            <!-- Local Attractions Pulled from the Javascript file -->
+          </tbody>
+        </table>
+      </div>
+    </section>
 
     <!-- Local Attractions json file data pull end -->
 
@@ -191,6 +174,5 @@
       crossorigin="anonymous"
     ></script>
     <script src="../javascript/staywell.js"></script>
-    <script src="../javascript/countdown.js"></script>
   </body>
 </html>

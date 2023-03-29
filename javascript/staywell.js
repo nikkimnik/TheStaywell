@@ -156,3 +156,56 @@ function createConfirmationNumber() {
 }
 
 //Alt Order Confirmation # Code End
+
+/*Local Attractions Json Data Pull Begins*/
+
+fetch("../attractions.json")
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (attractions) {
+    let placeholder = document.querySelector("#attraction-list");
+    let out = "";
+    for (let attraction of attractions) {
+      out += `
+    <tr>
+      <td> <img src='${attraction.image_url}'> </td>
+      <td>${attraction.attraction}</td>
+      <td>${attraction.address}</td>
+      <td>${attraction.distance}</td>
+    </tr>
+    `;
+    }
+
+    placeholder.innerHTML = out;
+  });
+async function loadIntoTable(url, table) {
+  const tableHead = table.querySelector("thead");
+  const tableBody = table.querySelector("tbody");
+  const response = await fetch(url);
+  const { headers, rows } = await response.json();
+
+  // Clear the table
+  tableHead.innerHTML = "<tr></tr>";
+  tableBody.innerHTML = "";
+
+  // Populate the headers
+  for (const headerText of headers) {
+    const headerElement = document.createElement("th");
+
+    headerElement.textContent = headerText;
+    tableHead.querySelector("tr").appendChild(headerElement);
+  }
+  //Populate the rows
+  for (const row of rows) {
+    const rowElement = document.createElement("tr");
+
+    for (const cellText of row) {
+      HTMLTableCellElement.textContent = cellText;
+      rowElement.appendChild(cellElement);
+    }
+    tableBody.appendChild(rowElement);
+  }
+}
+
+loadIntoTable("./attractions.json", document.querySelector("table"));
