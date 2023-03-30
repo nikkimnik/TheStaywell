@@ -1,10 +1,12 @@
-#In the beginning, there was nothing...
-![Staywell Logo](../TheStaywell/images/staywelllogocreation.jpg)
+# In the beginning, there was nothing...
 
-Thanks to my Designer, [Ivana Giseli](mailto:ivanadesign123@gmail.com) who got the ball rolling!
+![Staywell Logo](./images/staywelllogocreation.jpg)
 
-#The Staywell
-###by Hildred N. Baker (Nikki)
+# Many Thanks to my Designer, [Ivana Giseli](mailto:ivanadesign123@gmail.com) who got the ball rolling with my lovely logo!
+
+# The Staywell
+
+### by Hildred N. Baker (Nikki)
 
 Visit my website here (https://www.stayneartheark.com) when hosted on AWS in the near future.
 
@@ -42,4 +44,4 @@ I like that the features assigned are completely relevent to REAL WORLD applicat
 1. The Node.js server, for example, was working, then stopped working (repeat, etc.), so I was afraid to use that feature to fulfill an actual requirement of this project.
 2. My Order Confirmation page (orderconfirmation.html) will ultimately "use a function that accepts 2 or more input parameters and returns a value that is calculated or determined by the inputs" and creates a custom confirmation number.
 
-###Thank you for checking out my project! I hope you like it!!
+## Thank you for checking out my project! I hope you like it!!
