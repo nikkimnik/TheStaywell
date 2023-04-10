@@ -59,6 +59,10 @@ nav.primary-navigation {
   display: block;
 }
 
+.attraction-list span {
+  color: black;
+}
+
 .text1 {
   color: #ffff;
   font-size: 30px;
@@ -516,10 +520,6 @@ p.book-link-text {
 .attraction-list {
   margin-top: 30px;
 }
-.attraction-list span {
-  color: black;
-}
-
 .attraction-item {
   padding: 25px;
   background: #fff;
@@ -906,6 +906,75 @@ ul.ft-nav-list {
   max-width: inherit;
   flex: none;
 } */
+.about-boxes {
+  padding: 30px 25px;
+  background: #fff;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 0 8px #777;
+  gap: 20px;
+  text-align: center;
+}
+.about-boxes h3 {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+.about-boxes p {
+  font-size: 20px;
+  color: #990300;
+  font-weight: 500;
+  margin: 0;
+}
+
+/*new aboutus css*/
+section.ab-content-data {
+  background: #990000;
+  padding: 0px 0 75px;
+  margin-top: 0px;
+}
+section.contact-content-section.ab-content-section {
+  background: #000;
+  padding-bottom: 90px;
+}
+.inner-data {
+  /*background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 0 #999;*/
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: -100px;
+}
+.inner-data h2 {
+  font-size: 24px;
+  color: #380000;
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: 0;
+  text-align: center;
+}
+.inner-data img {
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+.inner-data h4 {
+  font-size: 18px;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: 0;
+  text-align: left;
+}
+.inner-data p {
+  font-size: 16px;
+  line-height: 26px;
+  color: #fff;
+  margin-bottom: 5px;
+}
+/*new aboutus css*/
 
 @media (max-width: 1430px) {
   ul.ft-nav-list {

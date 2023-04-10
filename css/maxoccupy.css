@@ -1,0 +1,25 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+form {
+  margin-top: 20px;
+}
+
+label {
+  display: inline-block;
+  width: 80px;
+}
+
+input[type="number"] {
+  width: 40px;
+}
+
+#error-message {
+  color: red;
+  margin-top: 10px;
+}
+
+#reserve-btn {
+  margin-top: 20px;
+}

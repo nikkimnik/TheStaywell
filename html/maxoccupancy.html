@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Short-term Rental Guest Picker</title>
+  <link rel="stylesheet" type="text/css" href="../css/maxoccupy.css">
+</head>
+<body>
+  <h1>Short-term Rental Guest Picker</h1>
+  <form>
+    <label for="adults">Adults:</label>
+    <input type="number" id="adults" name="adults" min="0" max="4" value="0">
+    <br>
+    <label for="children">Children:</label>
+    <input type="number" id="children" name="children" min="0" max="4" value="0">
+    <br>
+    <label for="infants">Infants:</label>
+    <input type="number" id="infants" name="infants" min="0" max="5" value="0">
+    <br>
+    <div id="error-message"></div>
+    <button type="submit" id="reserve-btn">Reserve</button>
+  </form>
+  <script src="../javascript/maxoccupancy.js">
+</body>
+</html>
